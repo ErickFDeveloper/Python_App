@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1 class="first-title">Python App</h1>
+    <button class="add-button" id="button">Agregar <i class="fas fa-caret-down icon"></i></button>
+    <div class="add-modal" id="content">
+        <form action="/add" method="POST">
+            <i class="fal fa-times close" id="close"></i>
+            <h1>Agregar Contenido</h1>
+
+            <div class="form-group">
+                <label for="title">Titulo</label>
+                <input type="text" name="title" id="title" placeholder="Titulo">
+            </div>
+
+            <div class="form-group">
+                <label for="description">Descripción</label>
+                <textarea name="description" id="description" cols="30" rows="10" placeholder="Descripcion"></textarea>
+            </div>
+            
+            <input type="submit" value="Agregar Contenido">
+        </form>
+    </div>
+    <div class="pub-content">
+     {% for pub in pubs %}
+        <div class="box">
+            <p class="title">{{ pub.1 }}</p>
+            <p class="description">{{ pub.2 }}</p>
+            <a href="/edit/{{ pub.0 }}"><button class="edit"><i class="far fa-edit"></i> Editar</button></a>
+            <a href="/delete/{{ pub.0 }}"><button class="delete"><i class="far fa-trash-alt"></i> Eliminar</button></a>
+        </div>
+     {% endfor %}
+    </div>
+
+    <script src="../static/js/modal.js"></script>
+    <script src="../static/js/fontawesome.js"></script>
+</body>
+</html>

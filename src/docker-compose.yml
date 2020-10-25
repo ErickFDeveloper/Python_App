@@ -1,0 +1,24 @@
+version: '3'
+
+services: 
+    app:
+        container_name: Code
+        build: .
+        ports: 
+            - "5000:5000"
+        links:
+            - db
+            
+    db:
+        container_name: DataBase
+        image: mysql:5.7
+        restart: always
+        ports:
+            - "32000:3306"
+        environment: 
+            MYSQL_ROOT_PASSWORD: 12345
+            MYSQL_DATABASE: noteapp
+            MYSQL_ROOT_HOST: '%'
+        volumes: 
+            - ./db:/docker-entrypoint-initdb.d/:ro
+        

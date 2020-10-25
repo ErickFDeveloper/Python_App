@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <form action="/update/{{ pub.0 }}" method="POST">
+        <h1>Editar Contenido</h1>
+
+        <div class="form-group">
+            <label for="title">Titulo</label>
+            <input type="text" name="title" id="title" placeholder="Titulo" value="{{ pub.1 }}">
+        </div>
+
+        <div class="form-group">
+            <label for="description">Descripción</label>
+            <textarea name="description" id="description" cols="30" rows="10" placeholder="Descripcion">{{ pub.2 }}</textarea>
+        </div>
+        
+        <input type="submit" value="Agregar Contenido">
+    </form>
+</body>
+</html>
