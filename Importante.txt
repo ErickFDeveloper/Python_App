@@ -1,0 +1,3 @@
+Ejecute el comando "docker-compose up" dentro de la carpeta src para poder ejecutar la aplicacion correctamente
+
+NOTA: Cuando se crea el contenedor por primera vez hay que esperar varios minutos para que la bases de datos se ejecute correctamente, todo dependera de la velocidad de su computadora.
